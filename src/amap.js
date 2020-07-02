@@ -13,6 +13,7 @@ let updateInterval;
 let map;
 let driving;
 let customer = {};
+let carMarker;
 
 function getPath(steps) {
   return steps.reduce((acc, current) => {
@@ -27,6 +28,7 @@ function updateGeo([lng, lat]) {
     lng: lng,
     lat: lat
   };
+  carMarker.setPosition([lng, lat]);
   message.success(JSON.stringify(geo));
   console.log(geo);
   service({
@@ -93,6 +95,13 @@ export function init() {
   map.on("rightclick", function (e) {
     contextMenu.open(map, e.lnglat);
     contextMenuPositon = e.lnglat;
+  });
+
+  carMarker = new AMap.Marker({
+    map: map,
+    position: startPos,
+    icon: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png",
+    offset: new AMap.Pixel(-13, -26)
   });
 }
 
