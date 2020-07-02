@@ -56,13 +56,13 @@ const devServerConfig = config => {
       app.use(bodyParser.urlencoded({ extended: true }));
 
       app.post("/location", (req, res) => {
+        const token = req.query.token;
         const options = {
           url: "http://172.26.71.1:8115/api/User/location",
           method: "POST",
           headers: {
             "content-type": "application/json",
-            "Disco-Token":
-              "CRvWk2g/Sa4rH5DTm4aIngOZzsF7K6s+FxdFal5ZswQjse6k5tp0OGF9i4ek0fOZ"
+            "Disco-Token": token
           },
           body: JSON.stringify(req.body)
         };
