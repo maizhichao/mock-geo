@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import "antd/dist/antd.less";
 import "./App.less";
 import * as amap from "./amap";
-import ConfigPanel, { customers } from "./ConfigPanel";
+import ConfigPanel, { users } from "./ConfigPanel";
 
 function App() {
   useEffect(() => {
-    amap.setCustomer(customers[0]);
+    amap.setUser(users[0]);
     amap.init();
     amap.drive();
     return () => {

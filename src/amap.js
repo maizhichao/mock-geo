@@ -12,7 +12,7 @@ let endPosMarker;
 let updateInterval;
 let map;
 let driving;
-let customer = {};
+let user = {};
 let carMarker;
 
 function getPath(steps) {
@@ -24,7 +24,7 @@ function getPath(steps) {
 
 function updateGeo([lng, lat]) {
   const geo = {
-    customerId: customer.id,
+    customerId: user.customerId,
     lng: lng,
     lat: lat
   };
@@ -36,7 +36,7 @@ function updateGeo([lng, lat]) {
     method: "POST",
     data: geo,
     headers: {
-      token: customer.token
+      token: user.token
     }
   }).catch(() => {
     clearInterval(updateInterval);
@@ -127,6 +127,6 @@ export function destroy() {
   clearInterval(updateInterval);
 }
 
-export function setCustomer(c) {
-  customer = c;
+export function setUser(c) {
+  user = c;
 }
