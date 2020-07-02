@@ -28,7 +28,7 @@ function updateGeo([lng, lat]) {
     lng: lng,
     lat: lat
   };
-  carMarker.moveTo([lng, lat], 50);
+  carMarker.moveTo([lng, lat], 100);
   message.success(JSON.stringify(geo));
   console.log(geo);
   service({
@@ -109,7 +109,7 @@ export function init() {
 
 export function drive() {
   clearInterval(updateInterval);
-
+  carMarker.setPosition(startPos);
   driving.search(startPos, endPos, function (status, result) {
     if (status === "complete") {
       const paths = getPath(result.routes[0].steps);
