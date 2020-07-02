@@ -56,7 +56,7 @@ const devServerConfig = config => {
       app.use(bodyParser.urlencoded({ extended: true }));
 
       app.post("/location", (req, res) => {
-        const token = req.query.token;
+        const token = req.headers.token;
         const options = {
           url: "http://172.26.71.1:8115/api/User/location",
           method: "POST",

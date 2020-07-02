@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "antd/dist/antd.less";
 import "./App.less";
 import * as amap from "./amap";

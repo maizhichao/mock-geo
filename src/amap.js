@@ -30,9 +30,12 @@ function updateGeo([lng, lat]) {
   message.success(JSON.stringify(geo));
   console.log(geo);
   service({
-    url: `/location?token=${customer.token}`,
+    url: `/location`,
     method: "POST",
-    data: geo
+    data: geo,
+    headers: {
+      token: customer.token
+    }
   }).catch(() => {
     clearInterval(updateInterval);
   });
