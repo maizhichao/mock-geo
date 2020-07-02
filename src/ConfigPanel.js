@@ -12,14 +12,19 @@ function Arrow(props) {
 
 export const customers = [
   {
-    id: 100107,
-    name: "shareuserA",
-    token: "CRvWk2g/Sa4rH5DTm4aIngOZzsF7K6s+FxdFal5ZswQjse6k5tp0OGF9i4ek0fOZ"
+    id: 326109,
+    name: "LB大屏用户1",
+    token: "P4o3JpiVW/6xzn+uYd/AyewjMOVMZ8LVY3CC6y8TFpZuuVVvS9s0AQ5rh2j/UVer"
   },
   {
-    id: 100108,
-    name: "TODO",
-    token: "CRvWk2g/Sa4rH5DTm4aIngOZzsF7K6s+FxdFal5ZswQjse6k5tp0OGF9i4ek0fOZ"
+    id: 326110,
+    name: "LB大屏用户2",
+    token: "EAoTk2Va/kbf3lmlvGxcneqRq+pMsyPSnOQROOvYldii6TMK0cIbUNZK1DbwPMew"
+  },
+  {
+    id: 326111,
+    name: "LB大屏用户3",
+    token: "1QHTRV4vAMFdlIvjqTfy//dR1kPQox2/b2qPaICez3r0L8J7vmX/IxxY2MjkjyK4"
   }
 ];
 
