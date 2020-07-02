@@ -41,7 +41,7 @@ export default function ConfigPanel(props) {
   }
 
   const handleChange = value => {
-    const selected = customers.find(c => c.id == value);
+    const selected = customers.find(c => c.id === value);
     setCustomer(selected);
     amap.setCustomer(selected);
   };
