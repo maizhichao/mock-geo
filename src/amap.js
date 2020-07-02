@@ -28,7 +28,7 @@ function updateGeo([lng, lat]) {
     lng: lng,
     lat: lat
   };
-  carMarker.setPosition([lng, lat]);
+  carMarker.moveTo([lng, lat], 50);
   message.success(JSON.stringify(geo));
   console.log(geo);
   service({
@@ -100,8 +100,10 @@ export function init() {
   carMarker = new AMap.Marker({
     map: map,
     position: startPos,
-    icon: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png",
-    offset: new AMap.Pixel(-13, -26)
+    icon: "https://webapi.amap.com/images/car.png",
+    offset: new AMap.Pixel(-26, -13),
+    autoRotation: true,
+    angle: -90
   });
 }
 
@@ -118,7 +120,7 @@ export function drive() {
           return;
         }
         updateGeo(path);
-      }, 5000);
+      }, 2000);
     }
   });
 }
