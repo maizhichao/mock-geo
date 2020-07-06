@@ -3,12 +3,12 @@ import "antd/dist/antd.less";
 import "./App.less";
 import * as amap from "./amap";
 import ConfigPanel, { users } from "./ConfigPanel";
+import MoveControl from "./map-controls/MoveControl";
 
 function App() {
   useEffect(() => {
     amap.setUser(users[0]);
     amap.init();
-    amap.drive();
     return () => {
       amap.destroy();
     };
@@ -19,6 +19,7 @@ function App() {
       <div id="__map"></div>
       <div id="__panel"></div>
       <ConfigPanel />
+      <MoveControl />
     </div>
   );
 }

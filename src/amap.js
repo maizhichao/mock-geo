@@ -14,12 +14,17 @@ let map;
 let driving;
 let user = {};
 let carMarker;
+let paused = false;
 
 function getPath(steps) {
   return steps.reduce((acc, current) => {
     const geo = current.path.map(p => [p.lng, p.lat]);
     return [...acc, ...geo];
   }, []);
+}
+
+export function setPaused(status) {
+  paused = status;
 }
 
 function updateGeo([lng, lat]) {
@@ -49,9 +54,10 @@ export function init() {
     center: [116.397428, 39.90923], //地图中心点
     zoom: 13 //地图显示的缩放级别
   });
+
   driving = new AMap.Driving({
     map: map,
-    panel: "__panel"
+    policy: AMap.DrivingPolicy.LEAST_TIME
   });
 
   const contextMenu = new AMap.ContextMenu();
@@ -114,12 +120,14 @@ export function drive() {
     if (status === "complete") {
       const paths = getPath(result.routes[0].steps);
       updateInterval = setInterval(() => {
-        const path = paths.shift();
-        if (!path) {
-          clearInterval(updateInterval);
-          return;
+        if (!paused) {
+          const path = paths.shift();
+          if (!path) {
+            clearInterval(updateInterval);
+            return;
+          }
+          updateGeo(path);
         }
-        updateGeo(path);
       }, 2000);
     }
   });
