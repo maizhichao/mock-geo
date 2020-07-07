@@ -28,6 +28,42 @@ export const users = [
     customerId: 358919,
     name: "LB大屏用户3",
     token: "1QHTRV4vAMFdlIvjqTfy//dR1kPQox2/b2qPaICez3r0L8J7vmX/IxxY2MjkjyK4"
+  },
+  {
+    id: 326154,
+    customerId: 374510,
+    name: "巡检王班长",
+    token: "Jl7kWPCXDvJZ7TQDPOr5xOsdV65f0Vxgw2dtMuUlwiapkLRnjysmeqFveQM/SAcf"
+  },
+  {
+    id: 326155,
+    customerId: 374510,
+    name: "巡检-赵班长",
+    token: "gftRZ0+jzfF36redYtlYAxHBDcwAdsazi15AnE6pbnfEPPK6mLfr+y+4QGqdRtNI"
+  },
+  {
+    id: 326156,
+    customerId: 374510,
+    name: "驻场-小八",
+    token: "zfT9T5zhK8hkJISFEFtaYj97jLYfLLT51OTE8Uf3fSXeaG4uwzG9VXFRNoQg4C1d"
+  },
+  {
+    id: 326157,
+    customerId: 374510,
+    name: "驻场-小花",
+    token: "sUUzDVP+6GyWpZdIxC/1hoeCiA4h48Lo2XDYVVDkkAuzOQbRU134Ira2v1h2pKYX"
+  },
+  {
+    id: 326158,
+    customerId: 374510,
+    name: "巡检-周班长",
+    token: "VfXmKuvLUC7coBNG7+pxEZett4N1F9Adft4cXlFD06nM6TArHJ/S9DkPszaZ5U9G"
+  },
+  {
+    id: 326159,
+    customerId: 374510,
+    name: "驻场-小牛",
+    token: "rJZ9vkzJPhxEbuULgexMSl9JeoL7WpcTwYC19oED3JoN4CUmwIO5CSehB9Oaph9i"
   }
 ];
 

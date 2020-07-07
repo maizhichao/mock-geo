@@ -28,11 +28,11 @@ export function setPaused(status) {
 }
 
 function updateGeo([lng, lat]) {
-  const geo = {
+  const geo = [{
     customerId: user.customerId,
     lng: lng,
     lat: lat
-  };
+  }];
   carMarker.moveTo([lng, lat], 100);
   message.success(JSON.stringify(geo));
   console.log(geo);
