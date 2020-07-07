@@ -30,6 +30,30 @@ export const users = [
     token: "1QHTRV4vAMFdlIvjqTfy//dR1kPQox2/b2qPaICez3r0L8J7vmX/IxxY2MjkjyK4"
   },
   {
+    id: 326160,
+    customerId: 358919,
+    name: "LB巡检班长-德华",
+    token: "0PzZfB9zxDIHNfGqbV0e48iuMx10F50kyMeB3piUamj4F+MXtbrb4JDYsmQR30fj3OiPNmiXmvK+Y7qx0DCF8Q=="
+  },
+  {
+    id: 326161,
+    customerId: 358919,
+    name: "LB驻场工程师-伟霆",
+    token: "yvfcYQwz2EptPc45gYbjKnCXAq8cXTyA6CNEVfNqJPQP2Y00rNJM25OvQ4T8Swk40Tt6vtwhyOZgmNYA8V4C0g=="
+  },
+  {
+    id: 326162,
+    customerId: 358919,
+    name: "LB驻场工程师-华建",
+    token: "X5Xsc5qx1yplAZdvU4G2a61p+lVZIZGdQO+THKJUf3HoncsLkJHLtzVHbvQaSVsMCe72RmcnzJH0egUauX/4Ww=="
+  },
+  {
+    id: 326163,
+    customerId: 358919,
+    name: "LB驻场工程师-天乐",
+    token: "x06HOKmLINSwdWufqZSNVFsLGeqhGEQtbamCqGuB2BcFU+kZ7VTjOhy6A/BZvNqTwpO39pL+nBlvk0Wf0VJCCg=="
+  },
+  {
     id: 326154,
     customerId: 374510,
     name: "巡检王班长",
