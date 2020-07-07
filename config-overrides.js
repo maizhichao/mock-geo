@@ -4,7 +4,7 @@ const {
   fixBabelImports,
   addLessLoader
 } = require("customize-cra");
-const request = require("request");
+const request = require("request-promise");
 const bodyParser = require("body-parser");
 
 const webpackConfig = override(
@@ -58,7 +58,7 @@ const devServerConfig = config => {
       app.post("/location", (req, res) => {
         const token = req.headers.token;
         const options = {
-          url: "http://172.26.71.1:8115/api/User/location",
+          uri: "http://172.26.71.1:8115/api/User/location",
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -67,8 +67,37 @@ const devServerConfig = config => {
           body: JSON.stringify(req.body)
         };
         console.log(options);
-        request(options);
-        res.send("OK");
+
+        request(options)
+          .then(r => {
+            res.send(r);
+          })
+          .catch(e => {
+            console.error(e);
+            res.send(e);
+          });
+      });
+
+      app.post("/accept", (req, res) => {
+        const ticketId = req.body.ticketId;
+        const token = req.headers.token;
+        const options = {
+          uri: "http://172.26.71.1:8115/api/tickets/accept/" + ticketId,
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Disco-Token": token
+          }
+        };
+        console.log(options);
+        request(options)
+          .then(r => {
+            res.send(r);
+          })
+          .catch(e => {
+            console.log(e);
+            res.send(e);
+          });
       });
     }
   };

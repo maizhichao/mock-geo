@@ -16,6 +16,10 @@ let user = {};
 let carMarker;
 let paused = false;
 
+export function getUser() {
+  return user;
+}
+
 function getPath(steps) {
   return steps.reduce((acc, current) => {
     const geo = current.path.map(p => [p.lng, p.lat]);
@@ -28,14 +32,15 @@ export function setPaused(status) {
 }
 
 function updateGeo([lng, lat]) {
-  const geo = {
-    customerId: user.customerId,
-    lng: lng,
-    lat: lat
-  };
+  const geo = [
+    {
+      customerId: user.customerId,
+      lng: lng,
+      lat: lat
+    }
+  ];
   carMarker.moveTo([lng, lat], 100);
   message.success(JSON.stringify(geo));
-  console.log(geo);
   service({
     url: `/location`,
     method: "POST",
@@ -43,9 +48,15 @@ function updateGeo([lng, lat]) {
     headers: {
       token: user.token
     }
-  }).catch(() => {
-    clearInterval(updateInterval);
-  });
+  })
+    .then(r => {
+      if (r && r.Error) {
+        throw r.Error;
+      }
+    })
+    .catch(() => {
+      clearInterval(updateInterval);
+    });
 }
 
 export function init() {

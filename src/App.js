@@ -4,6 +4,7 @@ import "./App.less";
 import * as amap from "./amap";
 import ConfigPanel, { users } from "./ConfigPanel";
 import MoveControl from "./map-controls/MoveControl";
+import AcceptTicket from "./map-controls/AcceptTicket";
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
       <div id="__panel"></div>
       <ConfigPanel />
       <MoveControl />
+      <AcceptTicket />
     </div>
   );
 }
