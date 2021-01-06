@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^4.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^1.0.0",
     "http-proxy-middleware": "^0.19.1",
